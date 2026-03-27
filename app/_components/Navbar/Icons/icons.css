@@ -1,0 +1,42 @@
+.icon {
+    height: 100%;
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.icon path {
+    fill: var(--beige3);
+}
+
+#butterfly-icon path:not(:first-child) {
+    fill: none;
+    stroke: var(--beige3);
+}
+
+#fish-icon.selected path {
+    fill: var(--light-blue);
+}
+
+#octopus-icon.selected path {
+    fill: var(--dark-blue);
+}
+
+#butterfly-icon.selected path {
+    fill: var(--green);
+}
+
+#butterfly-icon.selected path:not(:first-child) {
+    fill: none;
+    stroke: var(--green);
+}
+
+.icon:hover path {
+    fill: var(--brown) !important;
+}
+
+#butterfly-icon:hover path:not(:first-child) {
+    fill: none !important;
+    stroke: var(--brown) !important;
+}

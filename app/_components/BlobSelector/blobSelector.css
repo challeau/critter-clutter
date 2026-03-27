@@ -1,0 +1,43 @@
+.blob-container {
+    position: relative;
+}
+
+.blob-container > * {
+    display: flex;
+    align-items: center;
+    justify-content: start;
+}
+
+.goo-layer {
+  filter: url(#goo);
+}
+
+.content-layer {
+    position: absolute;
+    top: 0;
+}
+
+.goo-layer > * {
+    background-color: var(--white);
+    border-radius: var(--border-radius-M);
+}
+
+.content-layer > * {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.goo-layer > *, 
+.content-layer > * {
+    width: 3em;
+    height: 3em;
+
+    margin-left: -0.4em;
+}
+
+.goo-layer > :first-child,
+.content-layer > :first-child {
+    width: 3.7em;
+    height: 3.7em;
+}

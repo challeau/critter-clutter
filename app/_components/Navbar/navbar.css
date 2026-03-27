@@ -1,0 +1,66 @@
+#navbar {
+    height: 6.3em;
+    width: 100%;
+
+    position: sticky;
+    top: 0;
+    z-index: 100;
+
+    clip-path: shape(from 0 0,vline to calc(100% - 0.5em),curve to 18.75% calc(100% - 0.5em) with 12.5% calc(100% - 1em),curve to 31.25% calc(100% - 0.5em) with 25% calc(100% - 0em),curve to 43.75% calc(100% - 0.5em) with 37.5% calc(100% - 1em),curve to 56.25% calc(100% - 0em) with 50% calc(100% - 0em),curve to 68.75% calc(100% - 0em) with 62.5% calc(100% - 0em),curve to 81.25% calc(100% - 0.5em) with 75% calc(100% - 0em),curve to 100% calc(100% - 0.5em) with 87.5% calc(100% - 1em),vline to 0, hline to 0);
+}
+
+#navbar.green {
+    background-color: var(--green);
+}
+
+#navbar.light-blue {
+    background-color: var(--light-blue);
+}
+
+#navbar.dark-blue {
+    background-color: var(--dark-blue);
+}
+
+#navbar > * {
+     position: absolute;
+     top: 1em;
+}
+
+#navbar #page-selector {
+    left: 1.4em;
+}
+
+#navbar #hemisphere-switch {
+    right: 1em;
+}
+
+#navbar #hemisphere-switch.blob-container > div {
+    flex-direction: row-reverse;
+}
+
+#navbar #hemisphere {
+    width: 2.6em;
+    font-size: var(--font-M);
+    line-height: 1px;
+    color: var(--beige3);
+}
+
+#navbar #earth-icon {
+    width: 3em;
+    animation: spin 1s linear infinite;
+    animation-play-state: paused;
+    cursor: pointer;
+}
+
+#navbar #earth-icon:hover {
+    animation-play-state: running;
+}
+
+@keyframes spin {
+    from {
+        transform: rotate(0deg);
+    }
+    to {
+        transform: rotate(360deg);
+    }
+}

@@ -1,0 +1,56 @@
+#footer {
+    height: 5em;
+    width: 100%;
+
+    position: sticky;
+    bottom: 0;
+    z-index: 100;
+}
+
+#footer #foreground {
+    height: 4.7em;
+    width: 100%;
+
+    position: absolute;
+    bottom: 0;
+    z-index: 10;
+
+    clip-path: shape(from 0 100%,vline to 1em,curve to 25% 2em with 16.67% 2em,curve to 41.67% 1.5em with 33.33% 2em,curve to 58.33% 0.5em with 50% 1em,curve to 75% 0.5em with 66.67% 0em,curve to 100% 1em with 83.33% 1em,vline to 100%, hline to 0);
+    transform: scaleX(-1);
+}
+
+#footer #background {
+    height: 5em;
+    width: 100%;
+    
+    
+    position: absolute;
+    bottom: 0;
+    z-index: 9;
+    
+    clip-path: shape(from 0 100%,vline to 1em,curve to 18.75% 0.5em with 12.5% 0em,curve to 31.25% 1em with 25% 1em,curve to 43.75% 1em with 37.5% 1em,curve to 56.25% 1em with 50% 1em,curve to 68.75% 1.5em with 62.5% 1em,curve to 81.25% 1.5em with 75% 2em,curve to 100% 1em with 87.5% 1em,vline to 100%, hline to 0);
+}
+
+#footer.green #foreground {
+    background-color: var(--green);
+}
+
+#footer.light-blue #foreground {
+    background-color: var(--light-blue);
+}
+
+#footer.dark-blue #foreground {
+    background-color: var(--dark-blue);
+}
+
+#footer.green #background {
+    background-color: var(--green2);
+}
+
+#footer.light-blue #background {
+    background-color: var(--light-blue2);
+}
+
+#footer.dark-blue #background {
+    background-color: var(--dark-blue2);
+}

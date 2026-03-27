@@ -1,0 +1,8 @@
+#loading {
+    display: flex;
+    height: 73.4vh;
+}
+
+#loading p {
+    margin: auto;
+}

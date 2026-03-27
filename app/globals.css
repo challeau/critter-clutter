@@ -1,0 +1,22 @@
+* {
+  box-sizing: border-box;
+  transition-property: all;
+  transition-duration: .2s;
+  transition-timing-function: ease-in-out;
+}
+
+body {
+  position: relative;
+  min-height: 100vh;
+
+  padding: 0;
+  margin: 0;
+
+  color: var(--brown);
+  background-color: var(--beige1);
+
+  font-family: 'Quicksand', sans-serif;
+  font-size: var(--font-M);
+  word-wrap: break-word;
+  text-align: justify;
+}

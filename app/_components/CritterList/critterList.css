@@ -1,0 +1,33 @@
+#critter-list {
+    width: fit-content;
+
+    margin: 2em auto;
+    padding: 0;
+
+    display: grid;
+	grid-template-columns: repeat(9, 1fr);
+	grid-template-rows: repeat(5, 1fr);
+
+    border: 1px solid #d9cec1;
+}
+
+.critter {
+    list-style: none;
+    width: 8em;
+    height: 8em;
+
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+    border: 1px solid var(--beige2);
+    z-index: 1;
+}
+
+.critter img:not(.available) {
+    filter: contrast(0) sepia(100%) brightness(1.2);
+}
+
+.critter:hover img {
+    filter: contrast(0) sepia(100%) brightness(1);
+}

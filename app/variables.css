@@ -1,0 +1,41 @@
+/* COLORS */
+:root {
+  /* base */
+  --white: #FEF8EC;
+  --beige1: #F4EFD1; /* background & help btn */
+  --beige2: #E2D9AE; /* grid border*/
+  --beige3: #D1C699; /* shadowed icons & page indic */
+  --brown: #493C34;
+
+  /* accents */
+  --light-blue: #5DB8B3;
+  --light-blue2: #79D7BF;
+  --green: #7ABA4F;
+  --green2: #9DCD77;
+  --dark-blue: #253B52;
+  --dark-blue2: #3A626E;
+
+  /* shadows */
+  --soft-shadow-S: rgba(0, 0, 0, 0.2) 0px 5px 15px;
+  --soft-shadow-L: rgba(0, 0, 0, 0.2) 5px 10px 20px;
+}
+
+/* NUMERICALS */
+:root {
+  --border-radius-S: 1em;
+  --border-radius-M: 2em;
+  --border-radius-L: 3em;
+  --border-radius-XL: 4em;
+
+  --opacity-S: 25%;
+  --opacity-M: 35%;
+  --opacity-L: 50%;
+  --opacity-XL: 60%;
+
+  --font-XS: 0.75em;
+  --font-S: 1em;
+  --font-M: 1.3em;
+  --font-L: 1.5em;
+  --font-XL: 1.75em;
+  --font-XXL: 3.5em;
+}
