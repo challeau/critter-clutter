@@ -1,14 +1,32 @@
 #critter-list {
     width: fit-content;
 
-    margin: 2em auto;
+    margin: 0 auto;
     padding: 0;
 
     display: grid;
-	grid-template-columns: repeat(9, 1fr);
-	grid-template-rows: repeat(5, 1fr);
+	grid-template-columns: repeat(10, 1fr);
+	grid-template-rows: repeat(4, 1fr);
 
-    border: 1px solid #d9cec1;
+    border: 1px solid var(--beige2);
+    border-radius: var(--border-radius-S);
+}
+
+#critter-list .critter:first-child {
+    border-top-left-radius: var(--border-radius-S);
+}
+
+#critter-list .critter:last-child {
+    border-bottom-right-radius: var(--border-radius-S);
+}
+
+#critter-list .critter:nth-child(9) {
+    border-top-right-radius: var(--border-radius-S);
+}
+
+/* TODO */
+#critter-list .critter:nth-child(80) {
+    border-bottom-right-radius: var(--border-radius-S);
 }
 
 .critter {
@@ -24,10 +42,10 @@
     z-index: 1;
 }
 
-.critter img:not(.available) {
-    filter: contrast(0) sepia(100%) brightness(1.2);
+.critter:not(.available) img {
+    filter: contrast(0) sepia(70%) brightness(1.4);
 }
 
-.critter:hover img {
-    filter: contrast(0) sepia(100%) brightness(1);
+.critter:not(.available).in-season img {
+    filter: contrast(0) sepia(70%) brightness(1.1);
 }

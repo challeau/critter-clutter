@@ -3,24 +3,30 @@ import Link from "next/link";
 
 import "./navbar.css";
 import { ColorScheme } from "../../_types";
-import BlobSelector from "../BlobSelector/BlobSelector";
+import { BlobSelector } from "../BlobSelector/BlobSelector";
 import { ButterflyIcon, FishIcon, OctopusIcon } from "./Icons/Icons";
-import HemisphereSwitch from "./HemisphereSwitch";
+import { HemisphereSwitch } from "./HemisphereSwitch";
 
 type NavbarProps = {
   scheme: ColorScheme;
 };
 
-export default function Navbar({ scheme }: NavbarProps) {
+export function Navbar({ scheme }: NavbarProps) {
   const pages = [
     <Link key="home" href="/">
-      <Image src="/head.svg" width={47} height={56} alt="home page" />
+      <Image
+        src="/head.svg"
+        width={47}
+        height={56}
+        alt="home page"
+        loading="eager"
+      />
     </Link>,
-    <Link key="insects" href="/insects">
-      <ButterflyIcon isSelected={scheme === ColorScheme.Insects} />
+    <Link key="bugs" href="/bugs">
+      <ButterflyIcon isSelected={scheme === ColorScheme.Bugs} />
     </Link>,
-    <Link key="fish" href="fish">
-      <FishIcon isSelected={scheme === ColorScheme.Fish} />
+    <Link key="fishes" href="fishes">
+      <FishIcon isSelected={scheme === ColorScheme.Fishes} />
     </Link>,
     <Link key="deep-sea-creatures" href="/deep-sea-creatures">
       <OctopusIcon isSelected={scheme === ColorScheme.DeepSeaCreatures} />

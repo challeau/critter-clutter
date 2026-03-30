@@ -1,7 +1,6 @@
 import "./loading.css";
 
-export default function Loading() {
-  // Or a custom loading skeleton component
+export function Loading() {
   return (
     <div id="loading">
       <p>Loading...</p>

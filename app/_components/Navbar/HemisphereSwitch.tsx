@@ -1,20 +1,12 @@
 "use client";
 
-import { useState } from "react";
 import Image from "next/image";
 
-import BlobSelector from "../BlobSelector/BlobSelector";
+import { useHemisphere } from "@/app/_providers/lib";
+import { BlobSelector } from "../BlobSelector/BlobSelector";
 
-export default function HemisphereSwitch() {
-  const [hemisphere, setHemisphere] = useState(
-    localStorage.getItem("hemisphere") ?? "N",
-  );
-
-  const toggleHemisphere = () => {
-    const selection = hemisphere == "N" ? "S" : "N";
-    setHemisphere(selection);
-    localStorage.setItem("hemisphere", selection);
-  };
+export function HemisphereSwitch() {
+  const { hemisphere, toggleHemisphere } = useHemisphere();
 
   return (
     <BlobSelector id="hemisphere-switch">

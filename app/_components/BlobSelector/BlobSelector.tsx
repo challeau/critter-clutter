@@ -5,7 +5,7 @@ type BlobSelectorProps = {
   id: string;
 };
 
-export default function BlobSelector({ children, id }: BlobSelectorProps) {
+export function BlobSelector({ children, id }: BlobSelectorProps) {
   return (
     <>
       <svg width="0" height="0">
