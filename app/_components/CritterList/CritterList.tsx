@@ -1,26 +1,28 @@
 "use client";
 
 import Image from "next/image";
-import { use } from "react";
+import { use, useState } from "react";
 
 import "./critterList.css";
 import { Critter, Month } from "../../_types";
 import { checkHourAvailibility } from "@/app/_utils";
 import { useDateTime, useHemisphere } from "@/app/_providers/lib";
+import { PageSelect } from "../PageSelect/PageSelect";
+
+const PAGE_SIZE = 40;
 
 type CritterListProps = {
   data: Promise<Critter[]>;
-  rightNow?: Date;
 };
 
 export function CritterList(props: CritterListProps) {
   const { data } = props;
-  const critters = use(data);
 
   const { hemisphere } = useHemisphere();
   const { month, hours } = useDateTime();
 
-  const crittersList = critters.map((critter, index) => {
+  const critters = use(data);
+  const critterList = critters.map((critter, index) => {
     const monthAvailability = critter.availability[hemisphere][month as Month];
     const isInSeason = monthAvailability !== null;
     const isAvailable = checkHourAvailibility(monthAvailability, hours);
@@ -30,8 +32,8 @@ export function CritterList(props: CritterListProps) {
       <li key={index} className={className}>
         <Image
           src={critter.image_url}
-          width={130}
-          height={130}
+          width={100}
+          height={100}
           alt={critter.name}
           loading="eager"
         />
@@ -39,6 +41,18 @@ export function CritterList(props: CritterListProps) {
     );
   });
 
-  // TODO: make pages ! 4 * 9 members max
-  return <ul id="critter-list">{crittersList}</ul>;
+  const [page, setPage] = useState(1);
+  const totalPages = critterList.length / PAGE_SIZE;
+  const start = (page - 1) * PAGE_SIZE;
+  const end = start + PAGE_SIZE;
+  const currentCritters = critterList.slice(start, end);
+
+  return (
+    <div id="critter-list-container">
+      <ul id="critter-list">{currentCritters}</ul>
+      {totalPages > 1 && (
+        <PageSelect page={page} totalPages={totalPages} setPage={setPage} />
+      )}
+    </div>
+  );
 }

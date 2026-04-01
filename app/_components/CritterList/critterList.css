@@ -1,7 +1,16 @@
+#critter-list-container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: end;
+    position: relative;
+    width: max-content;
+    margin: 0 auto;
+}
+
 #critter-list {
     width: fit-content;
 
-    margin: 0 auto;
     padding: 0;
 
     display: grid;
@@ -20,19 +29,18 @@
     border-bottom-right-radius: var(--border-radius-S);
 }
 
-#critter-list .critter:nth-child(9) {
+#critter-list .critter:nth-child(10) {
     border-top-right-radius: var(--border-radius-S);
 }
 
-/* TODO */
-#critter-list .critter:nth-child(80) {
-    border-bottom-right-radius: var(--border-radius-S);
+#critter-list .critter:nth-child(31) {
+    border-bottom-left-radius: var(--border-radius-S);
 }
 
 .critter {
     list-style: none;
-    width: 8em;
-    height: 8em;
+    width: 6.5em;
+    height: 6.5em;
 
     display: flex;
     justify-content: center;

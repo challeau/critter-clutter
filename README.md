@@ -7,7 +7,7 @@
 - [ ] Caught mecanic
 - [ ] Critter view and modal
 - [ ] Help button and modal
-- [ ] Make tabs have pages
+- [x] Make tabs have pages
 - [ ] Redirect 404 to home
 - [ ] Design home page
   - [ ] credit manaloka.com

@@ -41,5 +41,12 @@ export async function getBugs(): Promise<Bug[]> {
       },
     });
   });
-  return bugs;
+
+  // remove duplicates
+  const uniqueBugs = bugs.filter(
+    (bug: Bug, index, array: Bug[]) =>
+      array.findIndex((obj) => obj.index === bug.index) === index,
+  );
+
+  return uniqueBugs;
 }
