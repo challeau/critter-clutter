@@ -1,22 +1,22 @@
 import {
-  ColorScheme,
+  ColorTheme,
   AvailabilityCalendar,
   TimeAvailability,
   Month,
 } from "./_types";
 
 /**
- * Returns a color scheme based on the current url. Default: green.
+ * Returns a color theme based on the current url. Default: green.
  */
-export function getColorSchemeFromPathname(pathname: string) {
+export function getColorThemeFromPathname(pathname: string) {
   switch (pathname) {
     case "/fishes":
-      return ColorScheme.Fishes;
+      return ColorTheme.Fishes;
     case "/deep-sea-creatures":
-      return ColorScheme.DeepSeaCreatures;
+      return ColorTheme.DeepSeaCreatures;
     case "/bugs":
     default:
-      return ColorScheme.Bugs;
+      return ColorTheme.Bugs;
   }
 }
 

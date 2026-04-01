@@ -3,8 +3,8 @@ export type ChildrenProps = {
   children: React.ReactNode;
 };
 
-// Defines the color scheme of a page (defaults to green)
-export enum ColorScheme {
+// Defines the color theme of a page (defaults to green)
+export enum ColorTheme {
   Bugs = "green",
   Fishes = "light-blue",
   DeepSeaCreatures = "dark-blue",

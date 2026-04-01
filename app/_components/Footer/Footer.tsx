@@ -1,15 +1,16 @@
-import { ColorScheme } from "@/app/_types";
-
 import "./footer.css";
 
+import { useTheme } from "@/app/_providers/lib";
+
 type FooterProps = {
-  scheme: ColorScheme;
   children?: React.ReactNode[];
 };
 
-export function Footer({ scheme, children }: FooterProps) {
+export function Footer({ children }: FooterProps) {
+  const { theme } = useTheme();
+
   return (
-    <div id="footer" className={scheme}>
+    <div id="footer" className={theme}>
       <div id="foreground"></div>
       <div id="background"></div>
       {children}

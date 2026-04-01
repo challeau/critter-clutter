@@ -1,6 +1,8 @@
 import { Dispatch, SetStateAction } from "react";
 import "./pageSelect.css";
 
+import { useTheme } from "@/app/_providers/lib";
+
 type PageSelectProps = {
   page: number;
   totalPages: number;
@@ -8,6 +10,7 @@ type PageSelectProps = {
 };
 
 export function PageSelect({ page, totalPages, setPage }: PageSelectProps) {
+  const { theme } = useTheme();
   const pages: React.ReactNode[] = [];
 
   let i = 1;
@@ -20,7 +23,7 @@ export function PageSelect({ page, totalPages, setPage }: PageSelectProps) {
     i++;
   }
   return (
-    <div className="light-blue" id="page-select">
+    <div className={theme} id="page-select">
       {...pages}
     </div>
   );

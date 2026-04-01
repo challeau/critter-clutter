@@ -3,6 +3,7 @@
 
 - [x] Format API output to Critter
 - [x] Add context for hemisphere and datetime
+- [x] Add theme provider
 - [x] Availability-dependent critter display
 - [ ] Caught mecanic
 - [ ] Critter view and modal

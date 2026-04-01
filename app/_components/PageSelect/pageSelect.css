@@ -25,6 +25,10 @@
     border: 5px solid var(--beige3);
 }
 
+#page-select.green .page-button.selected {
+    border-color: var(--green);
+}
+
 #page-select.light-blue .page-button.selected {
     border-color: var(--light-blue);
 }
