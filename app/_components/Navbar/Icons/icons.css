@@ -6,10 +6,6 @@
     align-items: center;
 }
 
-.icon path {
-    fill: var(--beige3);
-}
-
 #butterfly-icon path:not(:first-child) {
     fill: none;
     stroke: var(--beige3);

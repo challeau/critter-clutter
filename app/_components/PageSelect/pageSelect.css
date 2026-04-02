@@ -14,8 +14,10 @@
 .page-button {
     width: 0.7em;
     height: 0.7em;
+
     background-color: var(--beige3);
     border-radius: var(--border-radius-XL);
+    cursor: pointer;
 }
 
 .page-button.selected {

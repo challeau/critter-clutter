@@ -6,7 +6,7 @@ type IconProps = {
   isSelected?: boolean;
 };
 
-function Icon({ id, children, isSelected }: IconProps) {
+export function Icon({ id, children, isSelected }: IconProps) {
   return (
     <div id={id} className={`icon${isSelected ? " selected" : ""}`}>
       {children}

@@ -1,0 +1,77 @@
+.button {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.4em;
+
+    position: relative;
+    padding: 0.5em 0.7em;
+    cursor: pointer;
+}
+
+.button > * {
+    z-index: 10;
+}
+
+.button-bg {
+    height: 100%;
+    width: 100%;
+    position: absolute;
+    z-index: 1;
+}
+
+.button.hoverable:not(:hover) .button-bg {
+    display: none;
+}
+
+.button-icon {
+    width: 1.2em;
+    display: flex;   
+}
+
+/* BEIGE */
+.button.beige {
+    color: var(--white);
+}
+.button.beige .button-bg path {
+    fill: var(--tspt-beige);
+}
+.button.beige .button-icon path {
+    fill: var(--white);
+}
+
+/* GREEN */
+.button.green {
+    color: var(--white);
+}
+.button.green .button-bg path {
+    fill: var(--green);
+    fill-opacity: 1;
+}
+.button.green .button-icon path {
+    fill: var(--white);
+}
+
+/* WHITE */
+.button.white {
+    color: var(--brown);
+}
+.button.white .button-bg path {
+    fill: var(--white);
+    fill-opacity: 1;
+}
+.button.white .button-icon path {
+    fill: var(--brown);
+}
+
+/* TRANSPARENT WHITE */
+.button.tspt-white {
+    color: var(--white);
+}
+.button.tspt-white .button-bg path {
+    fill: var(--white);
+    fill-opacity: 0.27;
+}
+.button.tspt-white .button-icon path {
+    fill: var(--white);
+}

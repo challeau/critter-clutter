@@ -54,3 +54,19 @@
 #footer.dark-blue #background {
     background-color: var(--dark-blue2);
 }
+
+#footer #content {
+    display: flex;
+    align-items: center;
+    gap: 1.5em;
+
+    height: 100%;
+    position: relative;
+
+    padding: 1.5em 2em 0.5em;
+    z-index: 300;
+
+    color: var(--white);
+    font-weight: 600;
+    font-size: var(--font-S);
+}

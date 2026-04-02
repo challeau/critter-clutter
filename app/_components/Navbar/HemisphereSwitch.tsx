@@ -18,7 +18,9 @@ export function HemisphereSwitch() {
           alt="hemisphere switch"
         />
       </div>
-      <div id="hemisphere">{hemisphere}</div>
+      <div id="hemisphere" style={{ cursor: "default", fontWeight: 700 }}>
+        {hemisphere}
+      </div>
     </BlobSelector>
   );
 }

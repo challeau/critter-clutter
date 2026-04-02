@@ -1,8 +1,9 @@
 "use client";
 
 import { ChildrenProps } from "../_types";
-import { HemisphereProvider } from "./HemisphereProvider";
 import { DateTimeProvider } from "./DateTimeProvider";
+import { FooterContentProvider } from "./FooterContentProvider";
+import { HemisphereProvider } from "./HemisphereProvider";
 import { ThemeProvider } from "./ThemeProvider";
 
 /**
@@ -12,7 +13,9 @@ export function AppProviders({ children }: ChildrenProps) {
   return (
     <ThemeProvider>
       <HemisphereProvider>
-        <DateTimeProvider>{children}</DateTimeProvider>
+        <DateTimeProvider>
+          <FooterContentProvider>{children}</FooterContentProvider>
+        </DateTimeProvider>
       </HemisphereProvider>
     </ThemeProvider>
   );

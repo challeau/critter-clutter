@@ -1,4 +1,5 @@
 // ROOT LAYOUT for shared UI
+import { AppProviders } from "./_providers/AppProviders";
 import ClientLayout from "./clientLayout";
 
 import "./globals.css";
@@ -10,7 +11,9 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body>
-        <ClientLayout>{children}</ClientLayout>
+        <AppProviders>
+          <ClientLayout>{children}</ClientLayout>
+        </AppProviders>
       </body>
     </html>
   );

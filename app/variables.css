@@ -7,6 +7,9 @@
   --beige3: #D1C699; /* shadowed icons & page indic */
   --brown: #493C34;
 
+  --tspt-white: rgba(243, 248, 230, 0.27);
+  --tspt-beige: rgba(163, 141, 67, 0.27);
+
   /* accents */
   --light-blue: #5DB8B3;
   --light-blue2: #79D7BF;
@@ -33,7 +36,7 @@
   --opacity-XL: 60%;
 
   --font-XS: 0.75em;
-  --font-S: 1em;
+  --font-S: 1.1em;
   --font-M: 1.3em;
   --font-L: 1.5em;
   --font-XL: 1.75em;

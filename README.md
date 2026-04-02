@@ -6,6 +6,7 @@
 - [x] Add theme provider
 - [x] Availability-dependent critter display
 - [ ] Caught mecanic
+- [x] Critter hover mecanic
 - [ ] Critter view and modal
 - [ ] Help button and modal
 - [x] Make tabs have pages
