@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect } from "react";
+import { useEffect, useState } from "react";
 
 import {
   Button,
@@ -8,27 +8,46 @@ import {
   ButtonType,
   CheckmarkIcon,
   HelpIcon,
+  Modal,
+  ModalPosition,
+  ModalType,
+  HelpModalContents,
 } from "../_components";
 import { useFooterContent } from "../_providers/lib";
+import { Bug } from "../_types";
 
-export function BugsFooter() {
+export function BugsFooter({ bugs }: { bugs: Bug[] }) {
   const { setFooterContent } = useFooterContent();
+  const [isHelpModalOpen, setIsHelpModalOpen] = useState<boolean>(false);
 
   useEffect(() => {
+    const helpModal = (
+      <Modal
+        key="0"
+        content={<HelpModalContents setIsOpen={setIsHelpModalOpen} />}
+        type={ModalType.Horizontal}
+        position={ModalPosition.Center}
+        isOpen={isHelpModalOpen}
+        setIsOpen={setIsHelpModalOpen}
+      />
+    );
+
     const helpButton = (
       <Button
-        key="0"
+        key="1"
         id="help-button"
         color={ButtonColor.TransparentWhite}
         icon={<HelpIcon />}
         text="Help"
         type={ButtonType.Hoverable}
-        onClick={() => {}}
+        onClick={() => {
+          setIsHelpModalOpen(true);
+        }}
       />
     );
     const catchMultiselectButton = (
       <Button
-        key="1"
+        key="2"
         id="catch-multi-select"
         color={ButtonColor.TransparentWhite}
         icon={<CheckmarkIcon />}
@@ -38,10 +57,10 @@ export function BugsFooter() {
       />
     );
 
-    setFooterContent([helpButton, catchMultiselectButton]);
+    setFooterContent([helpButton, helpModal, catchMultiselectButton]);
 
     return () => setFooterContent([]); // cleanup on unmount
-  }, [setFooterContent]);
+  }, [setFooterContent, isHelpModalOpen, setIsHelpModalOpen]);
 
   return null;
 }

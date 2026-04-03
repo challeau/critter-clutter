@@ -10,6 +10,8 @@ export enum ButtonType {
 export enum ButtonColor {
   Beige = "beige",
   Green = "green",
+  LightBlue = "light-blue",
+  DarkBlue = "dark-blue",
   White = "white",
   TransparentWhite = "tspt-white",
 }
@@ -25,7 +27,7 @@ type ButtonProps = {
 
 export function Button(props: ButtonProps) {
   const { color, icon, id, onClick, text, type = ButtonType.Solid } = props;
-  const className = `button ${color} ${type}`;
+  const className = `flex-container-row button ${color} ${type}`;
 
   const background = (
     <svg

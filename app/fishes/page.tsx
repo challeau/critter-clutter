@@ -12,8 +12,8 @@ export default async function FishesList() {
     <>
       <Suspense fallback={<Loading />}>
         <CritterList critters={fishes} />
+        <FishesFooter fishes={fishes} />
       </Suspense>
-      <FishesFooter fishes={fishes} />
     </>
   );
 }

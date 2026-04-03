@@ -1,7 +1,7 @@
 "use client";
 
 import Image from "next/image";
-import { use, useState } from "react";
+import { useState } from "react";
 
 import "./critterList.css";
 
@@ -53,7 +53,7 @@ export function CritterList(props: CritterListProps) {
           setSelected(critter.name);
         }}
       >
-        <div className="tooltip">
+        <div className="tooltip flex-container-row">
           <span className="tooltip-text">{critter.name}</span>
           <Image
             src={critter.image_url}

@@ -1,7 +1,4 @@
 .button {
-    display: flex;
-    align-items: center;
-    justify-content: center;
     gap: 0.4em;
 
     position: relative;
@@ -40,7 +37,30 @@
     fill: var(--white);
 }
 
+/* LIGHT BLUE */
+.button.light-blue {
+    color: var(--white);
+}
+.button.light-blue .button-bg path {
+    fill: var(--light-blue);
+    fill-opacity: 1;
+}
+.button.light-blue .button-icon path {
+    fill: var(--white);
+}
 /* GREEN */
+.button.dark-blue {
+    color: var(--white);
+}
+.button.dark-blue .button-bg path {
+    fill: var(--dark-blue);
+    fill-opacity: 1;
+}
+.button.dark-blue .button-icon path {
+    fill: var(--white);
+}
+
+/* DAARK BLUE */
 .button.green {
     color: var(--white);
 }

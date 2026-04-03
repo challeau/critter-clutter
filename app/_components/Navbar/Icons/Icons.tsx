@@ -7,8 +7,9 @@ type IconProps = {
 };
 
 export function Icon({ id, children, isSelected }: IconProps) {
+  const className = `flex-container-row icon ${isSelected ? "selected" : ""}`;
   return (
-    <div id={id} className={`icon${isSelected ? " selected" : ""}`}>
+    <div id={id} className={className}>
       {children}
     </div>
   );

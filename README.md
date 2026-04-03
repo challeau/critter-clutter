@@ -8,7 +8,7 @@
 - [ ] Caught mecanic
 - [x] Critter hover mecanic
 - [ ] Critter view and modal
-- [ ] Help button and modal
+- [x] Help button and modal
 - [x] Make tabs have pages
 - [ ] Redirect 404 to home
 - [ ] Design home page
