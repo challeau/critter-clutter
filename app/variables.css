@@ -5,11 +5,8 @@
   --beige1: #F4EFD1; /* background & help btn */
   --beige2: #E2D9AE; /* grid border*/
   --beige3: #D1C699; /* shadowed icons & page indic */
+  --beige4: #AFA480;
   --brown: #493C34;
-
-  --tspt-white: rgba(243, 248, 230, 0.27);
-  --tspt-beige: rgba(163, 141, 67, 0.27);
-  --tspt-brown: rgba(73, 60, 52, 0.80);
 
   /* accents */
   --light-blue: #5DB8B3;
@@ -18,6 +15,14 @@
   --green2: #9DCD77;
   --dark-blue: #253B52;
   --dark-blue2: #3A626E;
+  
+  /* transparent */
+  --tspt-white: rgba(243, 248, 230, 0.27);
+  --tspt-beige: rgba(163, 141, 67, 0.27);
+  --tspt-brown: rgba(73, 60, 52, 0.80);
+  --tspt-green: rgba(122, 186, 79, 0.20);
+  --tspt-light-blue: rgba(93, 184, 179, 0.20);
+  --tspt-dark-blue: rgba(37, 59, 82, 0.20);
 
   /* shadows */
   --soft-shadow-S: rgba(0, 0, 0, 0.2) 0px 5px 15px;
@@ -36,10 +41,10 @@
   --opacity-L: 50%;
   --opacity-XL: 60%;
 
-  --font-XS: 0.75em;
-  --font-S: 1.1em;
-  --font-M: 1.3em;
-  --font-L: 1.5em;
-  --font-XL: 1.75em;
+  --font-XS: 0.7em;
+  --font-S: 1.2em;
+  --font-M: 1.4em;
+  --font-L: 1.6em;
+  --font-XL: 1.8em;
   --font-XXL: 3.5em;
 }

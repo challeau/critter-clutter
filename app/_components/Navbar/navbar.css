@@ -39,17 +39,25 @@
 }
 
 #navbar #hemisphere {
-    width: 2.6em;
+    height: fit-content;
+    width: max-content;
+    min-width: 2.2em;
+
     font-size: var(--font-M);
-    line-height: 1px;
+    font-weight: 700;
+
     color: var(--beige2);
+    cursor: default;
 }
 
 #navbar #earth-icon {
-    width: 3em;
+    width: 3.7em;
+    height: 3.7em;
+
+    cursor: pointer;
+
     animation: spin 1s linear infinite;
     animation-play-state: paused;
-    cursor: pointer;
 }
 
 #navbar #earth-icon:hover {

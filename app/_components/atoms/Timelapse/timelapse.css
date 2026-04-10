@@ -1,0 +1,22 @@
+.timelapse {
+    width: max-content;
+    min-width: 7em;
+    height: fit-content;
+
+    position: relative;
+    padding: 1em;
+}
+
+.timelapse .timestamp {
+    gap: 0em;
+}
+
+.timelapse .hint {
+    line-height: 0.5em;
+}
+
+.timelapse .and {
+    font-size: var(--font-XS);
+    color: var(--tspt-brown);
+    padding: 0.3em 0;
+}

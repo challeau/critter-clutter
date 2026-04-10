@@ -1,0 +1,52 @@
+.icon {
+    height: 100%;
+}
+
+.text-icon {
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: flex-start;
+    gap: 0.5em;
+}
+
+/* CRITTERS */
+#butterfly-icon path {
+    fill: var(--beige3);
+}
+
+#butterfly-icon path:not(:first-child) {
+    fill: none;
+    stroke: var(--beige3);
+}
+
+
+#fish-icon.selected path {
+    fill: var(--light-blue);
+}
+
+#octopus-icon.selected path {
+    fill: var(--dark-blue);
+}
+
+#butterfly-icon.selected path {
+    fill: var(--green);
+}
+
+#butterfly-icon.selected path:not(:first-child) {
+    fill: none;
+    stroke: var(--green);
+}
+
+
+#butterfly-icon:hover path,
+#octopus-icon:hover path,
+#fish-icon:hover path {
+    fill: var(--brown);
+}
+
+#butterfly-icon:hover path:not(:first-child) {
+    fill: none !important;
+    stroke: var(--brown);
+}

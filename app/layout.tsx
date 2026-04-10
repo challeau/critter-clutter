@@ -1,5 +1,5 @@
 // ROOT LAYOUT for shared UI
-import { AppProviders } from "./_providers/AppProviders";
+import { AppProviders } from "./_lib";
 import ClientLayout from "./clientLayout";
 
 import "./globals.css";

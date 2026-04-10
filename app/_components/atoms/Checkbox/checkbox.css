@@ -1,0 +1,47 @@
+.checkbox {
+    border: 1px solid red;
+    padding: 0.5em 1em;
+    gap: 0.6em;
+}
+
+.checkbox .box {
+    height: 1.5em;
+    width: 1.5em;
+    display: flex;
+
+    background-color: var(--white);
+    border-radius: var(--border-radius-XL);
+
+    cursor: pointer;
+}
+
+.checkbox .checkmark {
+    height: 1.2em;
+    width: 1.2em;
+    border-radius: var(--border-radius-XL);
+    margin: auto;
+}
+
+.checkbox.green .checkmark {
+    background-color: var(--tspt-green);
+}
+
+.checkbox.light-blue .checkmark {
+    background-color: var(--tspt-light-blue);
+}
+
+.checkbox.dark-blue .checkmark {
+    background-color: var(--tspt-dark-blue);
+}
+
+.checkbox.green .checkmark path {
+    fill: var(--green);
+}
+
+.checkbox.light-blue .checkmark path {
+    fill: var(--light-blue);
+}
+
+.checkbox.dark-blue .checkmark path {
+    fill: var(--dark-blue);
+}

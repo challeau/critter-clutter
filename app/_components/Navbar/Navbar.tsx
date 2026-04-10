@@ -1,36 +1,49 @@
-import Image from "next/image";
 import Link from "next/link";
 
 import "./navbar.css";
 
-import { useTheme } from "@/app/_providers/lib";
+import { ColorTheme, useHemisphere, useTheme } from "@/app/_lib";
 
-import { ColorTheme } from "../../_types";
-import { BlobSelector } from "../BlobSelector/BlobSelector";
-import { ButterflyIcon, FishIcon, OctopusIcon } from "./Icons/Icons";
-import { HemisphereSwitch } from "./HemisphereSwitch";
+import { BlobSelector, Icon, IconKinds } from "../atoms";
+
+function HemisphereSwitch() {
+  const { hemisphere, toggleHemisphere } = useHemisphere();
+
+  return (
+    <BlobSelector id="hemisphere-switch">
+      <Icon id="earth-icon" kind={IconKinds.Earth} onClick={toggleHemisphere} />
+      <div id="hemisphere">{hemisphere}</div>
+    </BlobSelector>
+  );
+}
 
 export function Navbar() {
   const { theme } = useTheme();
 
   const pages = [
     <Link key="home" href="/">
-      <Image
-        src="/head.svg"
-        width={47}
-        height={56}
-        alt="home page"
-        loading="eager"
-      />
+      <Icon kind={IconKinds.Logo} />
     </Link>,
     <Link key="bugs" href="/bugs">
-      <ButterflyIcon isSelected={theme === ColorTheme.Bugs} />
+      <Icon
+        id="butterfly-icon"
+        kind={IconKinds.Butterfly}
+        isSelected={theme === ColorTheme.Bugs}
+      />
     </Link>,
     <Link key="fishes" href="fishes">
-      <FishIcon isSelected={theme === ColorTheme.Fishes} />
+      <Icon
+        id="fish-icon"
+        kind={IconKinds.Fish}
+        isSelected={theme === ColorTheme.Fishes}
+      />
     </Link>,
     <Link key="deep-sea-creatures" href="/deep-sea-creatures">
-      <OctopusIcon isSelected={theme === ColorTheme.DeepSeaCreatures} />
+      <Icon
+        id="octopus-icon"
+        kind={IconKinds.Octopus}
+        isSelected={theme === ColorTheme.DeepSeaCreatures}
+      />
     </Link>,
   ];
 

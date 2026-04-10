@@ -1,8 +1,7 @@
 "use client";
 
-import { ChildrenProps } from "./_types";
-import { Footer, Navbar } from "./_components";
-import { useFooterContent } from "./_providers/lib";
+import { Navbar, Footer } from "./_components";
+import { ChildrenProps, useFooterContent } from "./_lib";
 
 export default function ClientLayout({ children }: ChildrenProps) {
   const { footerContent } = useFooterContent();

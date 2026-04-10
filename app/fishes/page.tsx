@@ -1,18 +1,16 @@
 import { Suspense } from "react";
 
-import { Loading, CritterList } from "../_components";
-
-import { getFishes } from "./_lib";
-import { FishesFooter } from "./FishesFooter";
+import { CritterList, CrittersFooter, Loading } from "../_components";
+import { CritterKinds, getCritters } from "../_lib";
 
 export default async function FishesList() {
-  const fishes = await getFishes();
+  const fishes = await getCritters(CritterKinds.Fish, "fish");
 
   return (
     <>
       <Suspense fallback={<Loading />}>
         <CritterList critters={fishes} />
-        <FishesFooter fishes={fishes} />
+        <CrittersFooter />
       </Suspense>
     </>
   );

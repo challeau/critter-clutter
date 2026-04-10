@@ -1,0 +1,88 @@
+.critter-view {
+    height: 100%;
+    width: 100%;
+    
+    display: grid;
+    gap: 1em;
+    grid-template-columns:  1fr 1fr;
+	grid-template-areas:
+		"image image"
+		"calendar timelapse"
+		"calendar checkbox"
+}
+
+.critter-view > * {
+    margin: auto;
+}
+
+.critter-view .calendar {
+    grid-area: calendar;
+}
+
+.critter-view .timelapse {
+    grid-area: timelapse;
+}
+
+.critter-view .checkbox {
+    grid-area: checkbox;
+}
+
+.critter-view .background {
+    position: absolute;
+    z-index: 1;
+}
+
+.critter-image {
+    position: relative;
+    height: 11em;
+    width: 11em;
+    grid-area: image;
+}
+
+.critter-image img {
+    z-index: 2;
+    padding: 1em;
+    object-fit: contain;
+}
+
+.critter-name {
+    width: max-content;
+    min-width: 120%;
+    height: fit-content;
+    min-height: 2em;
+
+    position: absolute;
+    top: 83%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+
+    text-align: center;
+    z-index: 2;
+}
+
+.critter-name .background {
+    z-index: 2;
+}
+
+.critter-name .name {
+    color: var(--white);
+    font-size: var(--font-M);
+    z-index: 3;
+    padding: 0.3em 1em
+}
+
+.critter-name .name::first-letter {
+    text-transform: capitalize;
+}
+
+.critter-name .green path {
+    fill: var(--green);
+}
+
+.critter-name .light-blue path {
+    fill: var(--light-blue);
+}
+
+.critter-name .dark-blue path {
+    fill: var(--dark-blue);
+}

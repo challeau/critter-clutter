@@ -4,14 +4,17 @@
 }
 
 .modal-content h1 {
+   font-weight: 800;
    font-size: var(--font-L);
-   margin: 1em 3.7em 0;
+
+   margin: 1em 3.7em;
    text-align: center;
 }
 
 .modal-content h2 {
+   font-weight: 700;
    font-size: var(--font-M);
-   padding: 0.2em;
-   margin: 0.1em;
+
+   margin: 0.4em 0em;
    border-bottom: 3px solid var(--brown);
 }

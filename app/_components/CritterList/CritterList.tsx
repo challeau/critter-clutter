@@ -1,15 +1,21 @@
 "use client";
 
 import Image from "next/image";
-import { useState } from "react";
+import { Dispatch, SetStateAction, useState } from "react";
 
 import "./critterList.css";
 
-import { useDateTime, useHemisphere, useTheme } from "@/app/_providers/lib";
+import {
+  Critter,
+  useTheme,
+  useHemisphere,
+  useDateTime,
+  Month,
+  checkHourAvailibility,
+} from "@/app/_lib";
 
-import { Critter, Month } from "../../_types";
-import { checkHourAvailibility } from "@/app/_utils";
-import { PageSelect } from "../PageSelect/PageSelect";
+import { PageSelect, Tooltip } from "../atoms";
+import { CritterViewModal } from "../CritterViewModal/CritterViewModal";
 
 const PAGE_SIZE = 40;
 
@@ -24,24 +30,34 @@ export function CritterList(props: CritterListProps) {
   const { hemisphere } = useHemisphere();
   const { month, hours } = useDateTime();
 
-  const [selected, setSelected] = useState(""); // TODO: reset selected when info modal closed
+  const [selectedCritter, setSelectedCritter] = useState<Critter>();
+
+  const [isCritterViewOpen, setIsCritterViewOpen] = useState(false);
+  const closeCritterView: Dispatch<SetStateAction<boolean>> = () => {
+    setIsCritterViewOpen(false);
+    setSelectedCritter(undefined);
+  };
+
+  const [isCaught, setIsCaught] = useState(true);
 
   const critterList = critters.map((critter, index) => {
-    const monthAvailability = critter.availability[hemisphere][month as Month];
+    const monthAvailability =
+      critter.months_availability[hemisphere][month as Month];
+
     let className = "critter";
 
     // check if critter is in season
-    if (monthAvailability !== null) {
+    if (monthAvailability) {
       className = className.concat(" ", "in-season");
-    }
 
-    // check if critter is available
-    if (checkHourAvailibility(monthAvailability, hours)) {
-      className = className.concat(" ", "available");
+      // check if critter is available right now
+      if (checkHourAvailibility(critter.time_availability, hours)) {
+        className = className.concat(" ", "available");
+      }
     }
 
     // check if critter is selected
-    if (critter.name === selected) {
+    if (critter.name === selectedCritter?.name) {
       className = className.concat(" ", "selected");
     }
 
@@ -50,19 +66,23 @@ export function CritterList(props: CritterListProps) {
         key={index}
         className={className}
         onClick={() => {
-          setSelected(critter.name);
+          setSelectedCritter(critter);
+          setIsCritterViewOpen(true);
         }}
       >
-        <div className="tooltip flex-container-row">
-          <span className="tooltip-text">{critter.name}</span>
-          <Image
-            src={critter.image_url}
-            width={100}
-            height={100}
-            alt={critter.name}
-            loading="eager"
-          />
-        </div>
+        <Tooltip
+          element={
+            <Image
+              src={critter.image_url}
+              width={100}
+              height={100}
+              alt={critter.name}
+              loading="eager"
+            />
+          }
+          tooltipText={critter.name}
+          theme={theme}
+        />
       </li>
     );
   });
@@ -74,13 +94,24 @@ export function CritterList(props: CritterListProps) {
   const currentCritters = critterList.slice(start, end);
 
   return (
-    <div id="critter-list-container">
-      <ul id="critter-list" className={theme}>
-        {currentCritters}
-      </ul>
-      {totalPages > 1 && (
-        <PageSelect page={page} totalPages={totalPages} setPage={setPage} />
-      )}
-    </div>
+    <>
+      <div id="critter-list-container">
+        <ul id="critter-list" className={theme}>
+          {currentCritters}
+        </ul>
+        {totalPages > 1 && (
+          <PageSelect page={page} totalPages={totalPages} setPage={setPage} />
+        )}
+      </div>
+      <CritterViewModal
+        critter={selectedCritter}
+        isCaught={isCaught}
+        setIsCaught={setIsCaught}
+        isOpen={isCritterViewOpen}
+        setIsOpen={closeCritterView}
+        hemisphere={hemisphere}
+        theme={theme}
+      />
+    </>
   );
 }

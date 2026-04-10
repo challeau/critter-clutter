@@ -9,14 +9,12 @@
 
     padding: 1em;
     color: var(--brown);
-    font-weight: 600;
     background-color: var(--tspt-brown);
     z-index: 10000;
 }
 
 .modal .modal-content {
     position: absolute;
-    font-size: var(--font-M);
     width: 20%;
     height: 50%;
     z-index: 10001;
@@ -48,28 +46,17 @@
 }
 
 /* horizontal */
+.modal.horizontal .modal-content,
 .modal.horizontal .blob {
     height: 75%;
     width: 50em;
     border-radius: 15em;
 }
 
-.modal.horizontal .modal-content {
-    height: 70%;
-    width: 38em;
-    border-radius: 15em;
-}
-
 /* vertical */
+.modal.vertical .modal-content,
 .modal.vertical .blob {
     height: 95vh;
     width: 30em;
     border-radius: 11em;
-}
-
-.modal.vertical .modal-content {
-    height: 95vh;
-    width: 23em;
-    border-radius: 11em;
-    border: 2px solid red;
 }
